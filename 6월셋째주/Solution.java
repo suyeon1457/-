@@ -1,18 +1,18 @@
-import java.util.Stack;
+ï»¿import java.util.Stack;
 class Solution {
     public int solution(String stick) {
-        int answer = 0; // Àı´ÜµÈ ¼è¸·´ë±â °á°ú°ª
-        String stick_point = stick.replace("()","p"); // ·¹ÀÌÀú Æ÷ÀÎÆ® ÇÑ±ÛÀÚ·Î º¯È¯
-        Stack<String> stack = new Stack<>(); //ÀÚ¸¥ ¼è¸·´ë±â ½ºÅÃ
+        int answer = 0; // ì ˆë‹¨ëœ ì‡ ë§‰ëŒ€ê¸° ê²°ê³¼ê°’
+        String stick_point = stick.replace("()","p"); // ë ˆì´ì € í¬ì¸íŠ¸ í•œê¸€ìë¡œ ë³€í™˜
+        Stack<String> stack = new Stack<>(); //ìë¥¸ ì‡ ë§‰ëŒ€ê¸° ìŠ¤íƒ
         
         for(int i=0;i<stick_point.length();i++){             
-            if(stick_point.charAt(i)=='('){// ¿©´Â °ıÈ£ ½ºÅÃÀúÀå
+            if(stick_point.charAt(i)=='('){// ì—¬ëŠ” ê´„í˜¸ ìŠ¤íƒì €ì¥
                 stack.push("(");
             }
-            else if(stick_point.charAt(i)=='p'){// ·¹ÀÌÀú Æ÷ÀÎÆ®½Ã ½ºÅÃ °ª ÀúÀå
+            else if(stick_point.charAt(i)=='p'){// ë ˆì´ì € í¬ì¸íŠ¸ì‹œ ìŠ¤íƒ ê°’ ì €ì¥
                 answer += stack.size();
             }
-            else if(stick_point.charAt(i)==')'){// ´ÙÀÚ¸¥ ¸·´ë±â +1 ¹× ½ºÅÃ¿¡¼­ »©±â
+            else if(stick_point.charAt(i)==')'){// ë‹¤ìë¥¸ ë§‰ëŒ€ê¸° +1 ë° ìŠ¤íƒì—ì„œ ë¹¼ê¸°
                 if(stack.size() > 0){
                     stack.pop();   
                 }
